@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: 'Poppins';
+}
+
+/* Container principal (pai de .perfis) */
+:host {
+  display: block;
+}
+
+.perfis-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh; // só o bloco dos perfis fica centralizado
+}
+
+/* A div que contém os perfis */
+.perfis {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  max-width: 1200px; // limita um pouco a largura, opcional
+}
+
+/* Cada perfil */
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 340px;   // mantém a área do perfil fixa
+  height: 340px;
+  overflow: hidden; // impede a imagem de sair da bolinha
+  border-radius: 50%; // deixa circular
+  position: relative;
+  background-color: rgb(215, 233, 233);
+  cursor: pointer;
+  z-index: 1;
+  filter: drop-shadow(0 0 0.2rem black);
+  transition: transform 2s;
+
+  img {
+    width: 420px;   // maior que o container
+    height: 420px;  // cria o "zoom"
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%); // centraliza a imagem cortada
+  }
+
+  span{
+    margin-top: 28px;
+    font-size: 28px;
+    font-weight: 600;
+  }
+}
+
+.perfil:hover{
+    transform: scale(1.08);
+}
+
+h1{
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, 0%); // centraliza a imagem cortada
+    font-size: 42px;
+    z-index: 1;
+}
+
+.overlay {
+  position: fixed;      // cobre a tela toda
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 9;        // fica acima de tudo
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 7.2s;  // some depois de 6 segundos
+}
+
+/* animação */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden; // evita clique bloqueado após sumir
+  }
+}
+
+app-intro {
+    z-index: 3;
+}
+
+.perfil {
+  position: relative;
+
+  .static-note {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    animation: float 2s ease-in-out infinite alternate;
+  }
+}
+
+/* Posicionamento das notas */
+.professor .static-note:nth-child(3) { left: 10px; } // DO
+.professor .static-note:nth-child(4) { left: 60px; } // RE
+
+.aluno .static-note:nth-child(3) { right: 10px; } // MI
+.aluno .static-note:nth-child(4) { right: 60px; } // FA
+
+/* animação suave para cima e para baixo */
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.clickable-note {
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+
+}
+
+.clickable-note:hover {
+  transform: scale(1.1);
+}
+
+/* Mesma animação de flutuação */
+.orbital-note {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  animation: float 2s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% { transform: rotate(0deg) translateY(0px); }
+  100% { transform: rotate(0deg) translateY(-15px); }
+}
+
+@keyframes float-do {
+  0% { transform: rotate(-15deg) translateY(0px); }
+  100% { transform: rotate(-15deg) translateY(-15px); }
+}
+
+@keyframes float-re {
+  0% { transform: rotate(15deg) translateY(0px); }
+  100% { transform: rotate(15deg) translateY(-15px); }
+}
+
+/* Professor notas (esquerda agora) */
+.prof-left-top-1 {
+  top: calc(50% - 220px);
+  left: calc(50% - 590px + 10px);
+  transform-origin: center;
+  animation: float-do 2s ease-in-out infinite alternate;
+}
+.prof-left-top-2 {
+  top: calc(50% - 250px - 20px);
+  left: calc(50% - 570px + 50px);
+}
+
+/* Aluno notas (direita agora) */
+.aluno-right-top-1 {
+  top: calc(50% - 210px);
+  left: calc(50% + 500px - 60px);
+transform-origin: center;
+  animation: float-re 2s ease-in-out infinite alternate;
+}
+.aluno-right-top-2 {
+  top: calc(50% - 240px - 20px);
+  left: calc(50% + 500px - 100px);
+
+}
