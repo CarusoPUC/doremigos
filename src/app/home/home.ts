@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Howl } from 'howler';
 
 
@@ -25,7 +26,7 @@ export class Home implements OnInit{
   @ViewChild('noteFa', { static: true }) noteFa!: ElementRef<HTMLImageElement>;
   @ViewChild('noteSol', { static: true }) noteSol!: ElementRef<HTMLImageElement>;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private router: Router) {}
 
   ngOnInit(): void {
       // Inicializa sons das notas
@@ -42,5 +43,9 @@ export class Home implements OnInit{
     this.renderer.listen(this.noteFa.nativeElement, 'click', () => void this.audioMap['fa'].play());
     this.renderer.listen(this.noteSol.nativeElement, 'click', () => void this.audioMap['sol'].play());
 
+  }
+
+  goToSchedule() {
+    this.router.navigate(['/schedule']);
   }
 }

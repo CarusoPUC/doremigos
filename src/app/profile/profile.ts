@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { Intro } from "./intro/intro";
 import { CommonModule } from '@angular/common';
 import { Howl } from 'howler';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -29,7 +30,7 @@ export class Profile implements OnInit {
   @ViewChild('profDiv', { static: true }) profDiv!: ElementRef<HTMLDivElement>;
   @ViewChild('alunoDiv', { static: true }) alunoDiv!: ElementRef<HTMLDivElement>;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private router: Router) {}
 
   ngOnInit(): void {
     // Inicializa sons das notas
@@ -65,5 +66,10 @@ export class Profile implements OnInit {
       this.renderer.listen(aluno, 'mouseenter', () => void this.hoverSoundAluno.play());
       this.renderer.listen(aluno, 'mouseleave', () => void this.hoverSoundAluno.stop());
     }
+
+  }
+    goToHome() {
+    this.hoverSoundProf.stop();
+    this.router.navigate(['/home']);
   }
 }
