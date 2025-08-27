@@ -1,0 +1,416 @@
+
+.container {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 1) 50%, rgba(0, 155, 232, 1) 100%);
+}
+
+.inner-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin: 44px 0;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  width: 100%;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0px 4px 9px #0c4a69;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7vh;
+  background-color: white;
+
+  @media (min-width: 1024px) {
+    width: 22%;
+  }
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0 36px;
+}
+
+.profile-image-container {
+  width: 172px;
+  height: 172px;
+  margin: 6px 0 6px;
+  position: relative;
+}
+
+.profile-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #009be8 0%, #0c4a69 100%);
+}
+
+.profile-avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;     /* foca na direita embaixo */
+  transform-origin: 71% 0%;    /* pivô no topo-central */
+  transform: translate(-50%, 0) scale(1.5) scaleX(-1); /* zoom sem expandir o frame */
+}
+
+.profile-name {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: black; /* global-1 */
+}
+
+/* Placeholder Bars */
+.placeholder-bars {
+  width: 100%;
+  padding: 0 6px;
+}
+
+.placeholder-bars .bar {
+  width: 100%;
+  height: 44px;
+  background: #ccc;
+  border-radius: 15px;
+  margin: 0px 0 22px 0;
+}
+
+/* Logo */
+.logo-container {
+  width: 100%;
+  margin-top: 24px;
+  padding: 0 14px;
+}
+
+.logo {
+  width: 100%;
+  height: 158px;
+  object-fit: contain;
+}
+
+
+/* Right Section */
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 10px;
+  width: 98%;
+  box-shadow: 0px 4px 9px #0c4a69;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px 34px;
+  border-radius: 14px;
+  background-color: #009be8;
+  color: #0d4b69;
+  font-weight: 600;
+}
+
+.tab.active {
+  background-color: #155e82;
+  color: #fff;
+}
+
+span{
+    align-self: start;
+    color: #2D89B7;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  height: 50%;
+}
+
+@media(min-width: 1024px) {
+  .main-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* Weekly Calendar */
+.weekly-calendar {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0px 4px 9px #0c4a69;
+  padding: 0px 16px;
+}
+
+/* Header */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.calendar-header p {
+  font-weight: bold;
+  color: #004a75;
+  text-align: center;
+  margin-top: 32px;
+  font-size: 20px;
+}
+
+.add-btn {
+  width: 38px;
+  height: 38px;
+  background-color: #009BE8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  font-size: 32px;
+  color: white;
+  margin-top: 16px;
+}
+
+.add-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Days container */
+.calendar-days {
+  background: #c8e9fa;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 70%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Each row */
+.day-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Buttons */
+.day-btn {
+  background: #ffffff;
+  color: #004a75;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  width: 109px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Active button */
+.day-btn.active {
+  background: #009BE8;
+  color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Slots */
+.day-slot {
+  flex: 1;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: #004a75;
+  font-weight: 500;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  font-weight: 600;
+}
+
+/* Active slot */
+.day-slot.active {
+  background: #009BE8;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Character Section */
+.character-section {
+  width: 32%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0px 4px 9px #0c4a69;
+  background-color: white;
+}
+
+.character-frame {
+  width: 90%;
+  height: 87%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #009BE8;
+  background: linear-gradient(180deg, rgba(0, 155, 232, 1) 0%, rgba(13, 75, 105, 1) 75%);
+  border-radius: 15px;
+  overflow: hidden !important;
+}
+
+.character-img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;  
+  transform-origin: -15% 30%;    /* pivô no topo-central */
+  transform: translate(-50%, 0) scale(1.75); /* zoom sem expandir o frame */
+}
+
+/* Wrapper */
+.lessons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* Título azul */
+.lessons-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #2D89B7;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Caixa branca arredondada */
+.lessons-section {
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Linha com as 3 aulas */
+.lessons-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Cada bloco de aula */
+.lesson {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Texto das aulas */
+.lesson p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.lesson-box {
+  width: 100%;
+  max-width: 250px;
+  height: 120px;
+  background-color: #cccccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botão play redondo */
+.play-btn {
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(230, 229, 229);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.play-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #cccccc; /* cor do ícone (pode trocar para #ff0000 se quiser vermelho) */
+}
+

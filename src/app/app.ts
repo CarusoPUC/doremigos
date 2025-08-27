@@ -2,13 +2,17 @@ import { Component, ViewChild, ViewContainerRef, AfterViewInit } from '@angular/
 import { CommonModule } from '@angular/common';
 import { Intro } from './profile/intro/intro';
 import { Profile } from './profile/profile';
+import { Home } from './home/home';
+import { Schedule } from "./schedule/schedule";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, Profile],
+  imports: [CommonModule, Profile, Home, Schedule],
   template: `
-    <app-profile></app-profile>
+    <!-- <app-profile></app-profile> -->
+     <!-- <app-home></app-home> -->
+      <!-- <app-schedule></app-schedule> -->
   `
 })
 export class App implements AfterViewInit {
@@ -17,7 +21,7 @@ export class App implements AfterViewInit {
 
   async ngAfterViewInit() {
     // Cria dinamicamente o componente Intro
-    const introRef = this.introContainer.createComponent(Intro);
+    // const introRef = this.introContainer.createComponent(Intro);
 
   }
 }

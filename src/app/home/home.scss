@@ -1,0 +1,240 @@
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 44px 0;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  width: 100%;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0px 4px 9px #0c4a69;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7vh;
+
+  @media (min-width: 1024px) {
+    width: 22%;
+  }
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0 36px;
+}
+
+.profile-image-container {
+  width: 172px;
+  height: 172px;
+  margin: 6px 0 6px;
+  position: relative;
+}
+
+.profile-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #009be8 0%, #0c4a69 100%);
+}
+
+.profile-avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;     /* foca na direita embaixo */
+  transform-origin: 71% 0%;    /* pivô no topo-central */
+  transform: translate(-50%, 0) scale(1.5) scaleX(-1); /* zoom sem expandir o frame */
+}
+
+.profile-name {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: black; /* global-1 */
+}
+
+/* Placeholder Bars */
+.placeholder-bars {
+  width: 100%;
+  padding: 0 6px;
+}
+
+.placeholder-bars .bar {
+  width: 100%;
+  height: 44px;
+  background: #ccc;
+  border-radius: 15px;
+  margin: 0px 0 22px 0;
+}
+
+/* Logo */
+.logo-container {
+  width: 100%;
+  margin-top: 24px;
+  padding: 0 14px;
+}
+
+.logo {
+  width: 100%;
+  height: 158px;
+  object-fit: contain;
+}
+
+/* Grades */
+.grades-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @media (min-width: 1024px) {
+    width: 72%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.card {
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @media (min-width: 640px) {
+    padding: 28px;
+  }
+}
+
+.large-card {
+  width: 100%;
+
+  @media (min-width: 640px) {
+    width: 68%;
+  }
+}
+
+.small-card {
+  width: 100%;
+
+  @media (min-width: 640px) {
+    width: 32%;
+  }
+}
+
+.third-card {
+  width: 100%;
+
+  @media (min-width: 640px) {
+    width: 33.333%;
+  }
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.card-content {
+  width: 100%;
+  height: 140px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 130%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;
+  display: block;  
+}
+
+/* Cores para simular Tailwind */
+.bg-blue { background-color: #3b82f6; }
+.bg-yellow { background-color: #facc15; }
+.bg-red { background-color: #ef4444; }
+.bg-green { background-color: #22c55e; }
+.bg-pink { background-color: #ff7fb3; }
+
+.text-blue { color: #3b82f6; }
+.text-yellow { color: #facc15; }
+.text-red { color: #ef4444; }
+.text-green { color: #22c55e; }
+.text-pink { color: #ec4899; }
+
+.shadow-blue { box-shadow: 0 4px 9px rgba(59, 130, 246, 0.6); }
+.shadow-yellow { box-shadow: 0 4px 9px rgba(250, 204, 21, 0.6); }
+.shadow-red { box-shadow: 0 4px 9px rgba(239, 68, 68, 0.6); }
+.shadow-green { box-shadow: 0 4px 9px rgba(34, 197, 94, 0.6); }
+.shadow-pink { box-shadow: 0 4px 9px rgba(236, 72, 153, 0.6); }
