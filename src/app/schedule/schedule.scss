@@ -106,16 +106,27 @@
 
 /* Placeholder Bars */
 .placeholder-bars {
+  display: flex;            /* Ativa o layout flexível */
+  flex-direction: column;      /* Alinha os itens na horizontal */
+  justify-content: center;  /* Centraliza horizontalmente */
+  align-items: center;
   width: 100%;
-  padding: 0 6px;
+  gap: 0px;                /* Espaçamento entre as barras */
 }
 
 .placeholder-bars .bar {
-  width: 100%;
+  width: 92%;
   height: 44px;
-  background: #ccc;
+  background: #B3E1F9;
   border-radius: 15px;
   margin: 0px 0 22px 0;
+  box-shadow: 0px 4px 9px #0c4a69;
+  color: #0D4B69;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 /* Logo */
@@ -223,7 +234,8 @@ span{
 .add-btn {
   width: 38px;
   height: 38px;
-  background-color: #009BE8;
+  background-color: #0D4B69;
+  
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -273,14 +285,15 @@ span{
   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
   width: 109px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Active button */
 .day-btn.active {
-  background: #009BE8;
+  background: #1590CD;
   color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 9px #0c4a69;
 }
 
 /* Slots */
@@ -297,7 +310,8 @@ span{
 
 /* Active slot */
 .day-slot.active {
-  background: #009BE8;
+  background: #1590CD;
+  box-shadow: 0px 4px 9px #0c4a69;
   color: #ffffff;
   font-weight: bold;
 }
@@ -388,7 +402,7 @@ span{
   width: 100%;
   max-width: 250px;
   height: 120px;
-  background-color: #cccccc;
+  background-color: #B3E1F9;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -401,7 +415,7 @@ span{
   height: 64px;
   border: none;
   border-radius: 50%;
-  background-color: rgb(230, 229, 229);
+  background-color: #009BE8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,6 +425,202 @@ span{
 .play-btn svg {
   width: 28px;
   height: 28px;
-  fill: #cccccc; /* cor do ícone (pode trocar para #ff0000 se quiser vermelho) */
+  fill: #B3E1F9; /* cor do ícone (pode trocar para #ff0000 se quiser vermelho) */
 }
 
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 60;
+  padding: 24px;
+  overflow-y: auto; /* <- use auto em vez de scroll pra não forçar sempre a barra */
+}
+
+/* Modal */
+.modal-calendar {
+  width: min(1100px, 98%);
+  background: linear-gradient(160deg, #ffffff 50%, #cceefa 100%);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(4,41,64,0.45);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  /* Faz o modal "crescer" e o overlay rolar */
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+/* Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.left-controls select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  font-weight: 600;
+}
+
+.month-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: #0d4b69;
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.month-title {
+  font-weight: 700;
+  color: #004a75;
+  padding: 4px 10px;
+}
+
+/* close */
+.close-x {
+  margin-left: 8px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+/* day names */
+.day-name {
+  text-align: center;
+  font-weight: 700;
+  padding: 10px 6px;
+  background: #009be8;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* day cell */
+.day-cell {
+  min-height: 96px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.day-cell.other-month {
+  opacity: 0.45;
+}
+
+.day-number {
+  font-weight: 700;
+  color: #0d4b69;
+  font-size: 14px;
+}
+
+/* events inside day */
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.day-event {
+  display: block;
+  padding: 6px 8px;
+  background: #e7f7ff;
+  border-radius: 8px;
+  border-left: 5px solid #0077ff;
+  font-size: 12px;
+  font-weight: 600;
+  color: #004a75;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.day-event .ev-sub {
+  font-size: 11px;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* responsividade */
+@media (max-width: 900px) {
+  .modal-calendar { padding: 12px; }
+  .day-cell { min-height: 80px; }
+  .day-name { font-size: 12px; }
+}
+
+.event-form {
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h3 { margin: 0; color: #0d4b69; }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 14px;
+    color: #004a75;
+
+    input, select {
+      margin-top: 4px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 8px;
+
+    button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      background: #009be8;
+      color: #fff;
+
+      &:nth-child(2) { background: #d81b60; }
+      &:nth-child(3) { background: #aaa; }
+    }
+  }
+}
