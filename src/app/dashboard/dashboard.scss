@@ -148,7 +148,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   align-items: flex-end;
 }
 
@@ -181,10 +181,17 @@
 }
 
 span{
+    color: #2D89B7;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.aulastitle{
     align-self: start;
     color: #2D89B7;
     font-size: 30px;
     font-weight: 600;
+    margin-top: 20px;
 }
 
 /* Main Content */
@@ -403,7 +410,6 @@ span{
   width: 100%;
   max-width: 250px;
   height: 120px;
-  background-color: #B3E1F9;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -426,7 +432,6 @@ span{
 .play-btn svg {
   width: 28px;
   height: 28px;
-  fill: #B3E1F9; /* cor do ícone (pode trocar para #ff0000 se quiser vermelho) */
 }
 
 /* Overlay */
@@ -624,4 +629,116 @@ span{
       &:nth-child(3) { background: #aaa; }
     }
   }
+}
+
+/* Modules */
+.modules {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 70vh;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+.module {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0px 4px 9px #0d4b69;
+}
+.module-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; /* título à esquerda e progresso à direita */
+  border-radius: 14px 14px 0 0;
+  align-items: center;            /* centraliza verticalmente */
+}
+
+.module-header h2, .module-header span {
+  color: #0D4B69 !important;
+  font-size: 28px !important;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.title-lesson{
+    font-size: 22px !important;
+    font-weight: 800;
+    color: #0D4B69;
+}
+
+.bg-verde {
+  background: #00A491;
+}
+.bg-verde-claro {
+  background: #99DBC5;
+}
+.bg-claro {
+  background: #f2f2f2;
+}
+
+.bg-rosa{
+background: #FF7FB3;
+}
+.bg-rosa-claro{
+background: #FFD9E9;
+}
+
+.bg-amarelo{
+    background: #FFBC00;
+}
+.bg-amarelo-claro{
+    background: #FFEBB3;
+}
+
+/* Lessons */
+.lessons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 0px 20px 20px 20px;
+}
+.lesson {
+  text-align: center;
+}
+.lesson h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.lesson-card {
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.lesson-btn:hover {
+  transform: scale(1.1);
+}
+.lesson-btn img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Scrollbar customizada */
+.modules::-webkit-scrollbar {
+  width: 8px;              /* mais fina */
+}
+
+.modules::-webkit-scrollbar-track {
+  background: transparent; /* fundo transparente */
+}
+
+.modules::-webkit-scrollbar-thumb {
+  background: #2D89B7; /* cor do thumb */
+  border-radius: 4px;   /* arredondado */
+}
+
+.modules::-webkit-scrollbar-thumb:hover {
+  background: darken(#2D89B7, 10%); /* tom mais escuro ao passar o mouse */
+}
+
+/* Para Firefox */
+.modules {
+  scrollbar-width: thin;
+  scrollbar-color: #2D89B7 transparent;
+  padding: 12px; /* espaço extra pra sombra aparecer */
 }

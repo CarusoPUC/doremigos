@@ -149,7 +149,6 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  align-items: flex-end;
 }
 
 /* Tabs */
@@ -187,13 +186,18 @@ span{
     font-weight: 600;
 }
 
+.mod{
+    font-size: 13px;
+    margin-top: 5px;
+}
+
 /* Main Content */
 .main-content {
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 100%;
-  height: 50%;
+  height: 45%;
 }
 
 @media(min-width: 1024px) {
@@ -354,16 +358,17 @@ span{
   display: flex;
   flex-direction: column;
   gap: 14px;
-  width: 100%;
+  width: 80%;
 }
 
 /* Título azul */
 .lessons-title {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
-  color: #2D89B7;
+  color: #0D4B69;
   margin: 0;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 /* Caixa branca arredondada */
@@ -590,7 +595,11 @@ span{
   flex-direction: column;
   gap: 10px;
 
-  h3 { margin: 0; color: #0d4b69; }
+  h3 { 
+    margin: 0; 
+    color: #0d4b69; 
+    text-align: center;
+}
 
   label {
     display: flex;
@@ -624,4 +633,137 @@ span{
       &:nth-child(3) { background: #aaa; }
     }
   }
+}
+
+/* Charts section (coluna da esquerda) */
+.charts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bar-chart-container,
+.pie-chart-container {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.bar-chart-container h3,
+.pie-chart-container h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #004b69;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Pie chart */
+.pie-chart-container {
+  /* mantém no fluxo abaixo do gráfico de barras */
+}
+
+/* Module completion (direita, parte de cima) */
+.module-completion {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.module-completion h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #004b69;
+  margin-bottom: 12px;
+}
+
+.module-bars {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.module-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.bar-bg {
+  width: 100%;
+  height: 120px;
+  background: #b3e1f9;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  background: #00a46f;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Character image (direita, parte de baixo) */
+.character-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.character-image img {
+  max-width: 180px;
+}
+.modules {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.module {
+  width: 100%;
+  text-align: center;
+}
+
+.module .bar {
+  width: 100%;
+  height: 150px;
+  background: #b3e1f9;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px
+}
+
+.module .fill {
+  width: 100%;
+  background: #00a46f;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
+
+.bottom-image {
+  position: absolute;   /* posicionamento absoluto */
+  bottom: 0;            /* gruda no rodapé */
+  right: 0;             /* gruda na direita */
+  width: 400px;         /* tamanho fixo */
+  height: auto;         /* mantém proporção da imagem */
+  z-index: 10;          /* garante que fique acima de outros elementos */
+}
+
+.bottom-image img {
+  width: 100%;          /* faz a imagem ocupar os 400px do container */
+  height: auto;         /* mantém a proporção */
+  transform: translate(0%, 0) scale(1.5) scaleX(1); 
 }

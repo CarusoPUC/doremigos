@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Router } from '@angular/router';
+import { ChartData, ChartOptions } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 interface EventItem {
   id: number;
@@ -21,11 +23,11 @@ interface CalendarCell {
 }
 
 @Component({
-  selector: 'app-schedule',
+  selector: 'app-analytics',
   standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './schedule.html',
-  styleUrls: ['./schedule.scss'],
+  imports: [CommonModule, FormsModule, BaseChartDirective],
+  templateUrl: './analytics.html',
+  styleUrls: ['./analytics.scss'],
   animations: [
     trigger('fadeZoom', [
       transition(':enter', [
@@ -38,7 +40,73 @@ interface CalendarCell {
     ])
   ]
 })
-export class Schedule {
+export class Analytics {
+  selectedModule = 'MÓDULO 01';
+
+  studentData = [
+    { name: 'A1', score: 6.5 },
+    { name: 'A2', score: 8.5 },
+    { name: 'A3', score: 1 },
+    { name: 'A4', score: 10 },
+    { name: 'A5', score: 5.5 },
+    { name: 'A6', score: 8.5 },
+    { name: 'A7', score: 5.5 },
+    { name: 'A8', score: 8.5 },
+    { name: 'A9', score: 9 },
+    { name: 'A10', score: 5 },
+    { name: 'A11', score: 8.5 }
+  ];
+
+  pieData = [
+    { name: 'ACERTOS', value: 65, color: '#ffd9e9' },
+    { name: 'ERROS', value: 35, color: '#ff7fb3' }
+  ];
+
+  // Gráfico de barras
+  barChartData: ChartData<'bar'> = {
+    labels: this.studentData.map(s => s.name),
+    datasets: [
+      {
+        label: '',
+        data: this.studentData.map(s => s.score),
+        backgroundColor: '#ffbc00',
+        borderRadius: 4
+      }
+    ]
+  };
+
+  barChartOptions: ChartOptions<'bar'> = {
+    responsive: true,
+      plugins: {
+    legend: {
+      display: false // <-- remove totalmente a legenda
+    }
+  },
+    scales: { y: { min: 0, max: 10, ticks: { stepSize: 1 } } }
+    
+  };
+
+  barChartType: 'bar' = 'bar';
+
+  // Gráfico de pizza
+  pieChartData: ChartData<'pie', number[], string | string[]> = {
+    labels: this.pieData.map(p => p.name),
+    datasets: [
+      {
+        data: this.pieData.map(p => p.value),
+        backgroundColor: this.pieData.map(p => p.color)
+      }
+    ]
+  };
+
+  pieChartOptions: ChartOptions<'pie'> = { responsive: true };
+
+  pieChartType: 'pie' = 'pie';
+
+  handleModuleNavigation(direction: 'prev' | 'next') {
+    console.log(`Navigate ${direction} from ${this.selectedModule}`);
+  }
+  
   showCalendar = false;
   showForm = false;
 
@@ -181,8 +249,7 @@ export class Schedule {
   gotToDashboard() {
     this.router.navigate(['/dashboard']);
   }
-
-    goToAnalytics() {
-    this.router.navigate(['/analytics']);
+  goToSchedule() {
+    this.router.navigate(['/schedule']);
   }
 }

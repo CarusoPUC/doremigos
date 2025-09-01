@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="layout">
+
+      <!-- Left Sidebar - User Profile -->
+      <div class="sidebar">
+        <!-- Profile Section -->
+        <div class="profile-section">
+          <div class="profile-image-container">
+            <div class="profile-gradient">
+              <div class="profile-avatar">
+                <img src="/assets/prof.png" alt="User Avatar" class="avatar" />
+                <!-- <img src="/images/profile-overlay.png" alt="" class="profile-overlay" /> -->
+              </div>
+            </div>
+          </div>
+          <p class="profile-name">Adalberto Silva</p>
+
+          <!-- Placeholder Bars -->
+          <div class="placeholder-bars">
+            <div class="bar">EDITAR PERFIL</div>
+            <div class="bar">TURMAS</div>
+          </div>
+          
+        </div>
+        
+        <!-- Bottom Logo -->
+        <div class="logo-container">
+          <div class="placeholder-bars">
+              <div class="bar">AJUDA</div>
+                <div class="bar">CONFIGURAÇÕES</div>
+                <div class="bar">LOGOUT</div>
+          </div>
+          <img src="/assets/logo.png" alt="Logo" class="logo" />
+        </div>
+      </div>
+
+      <!-- Right Content - Grade Cards -->
+      <div class="right-section">
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <div class="tab" (click)="goToSchedule()">CRONOGRAMA</div>
+        <div class="tab active">AULAS</div>
+        <div class="tab" (click)="goToAnalytics()">RELATÓRIO</div>
+      </div>
+      <span class="aulastitle">AULAS - TURMA - 1° ANO  </span>
+      <!-- Main Content -->
+        <div class="main-content">
+
+        <section class="modules">
+        <div *ngFor="let module of modules" class="module">
+            
+            <!-- cabeçalho do módulo -->
+            <div class="module-header" [ngClass]="module.backgroundColor">
+            <h2 class="module-title">{{ module.title }}</h2>
+            <span class="module-progress">{{ module.progress }}</span>
+            </div>
+
+            <!-- aulas -->
+            <div class="lessons">
+            <div *ngFor="let lesson of module.lessons" class="lesson">
+                <h3 class="title-lesson">{{ lesson.title }}</h3>
+
+                <!-- aplica cor de fundo da aula -->
+                <div class="lesson-box" [ngClass]="lesson.backgroundColor">
+
+                <!-- círculo do botão + cor do ícone -->
+                <button class="play-btn" [ngClass]="lesson.iconBackgroundColor">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="28" height="28"
+                        [attr.fill]="lesson.iconFillColor"
+                        class="bi bi-caret-right-fill"
+                        viewBox="0 0 16 16">
+                    <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 
+                            1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        </div>
+
+        </div>
+    </div>
+  </div>
+</div>

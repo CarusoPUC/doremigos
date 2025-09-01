@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="layout">
+
+      <!-- Left Sidebar - User Profile -->
+      <div class="sidebar">
+        <!-- Profile Section -->
+        <div class="profile-section">
+          <div class="profile-image-container">
+            <div class="profile-gradient">
+              <div class="profile-avatar">
+                <img src="/assets/prof.png" alt="User Avatar" class="avatar" />
+                <!-- <img src="/images/profile-overlay.png" alt="" class="profile-overlay" /> -->
+              </div>
+            </div>
+          </div>
+          <p class="profile-name">Adalberto Silva</p>
+
+          <!-- Placeholder Bars -->
+          <div class="placeholder-bars">
+            <div class="bar">EDITAR PERFIL</div>
+            <div class="bar">TURMAS</div>
+          </div>
+          
+        </div>
+        
+        <!-- Bottom Logo -->
+        <div class="logo-container">
+          <div class="placeholder-bars">
+              <div class="bar">AJUDA</div>
+                <div class="bar">CONFIGURAÇÕES</div>
+                <div class="bar">LOGOUT</div>
+          </div>
+          <img src="/assets/logo.png" alt="Logo" class="logo" />
+        </div>
+      </div>
+
+      <!-- Right Content - Grade Cards -->
+      <div class="right-section">
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <div class="tab" (click)="goToSchedule()">CRONOGRAMA</div>
+        <div class="tab" (click)="gotToDashboard()">AULAS</div>
+        <div class="tab active">RELATÓRIO</div>
+      </div>
+      <span>TURMA - 1° ANO </span>
+      <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Weekly Calendar -->
+            <div class="weekly-calendar">
+                <div class="charts-section">
+                    <div class="bar-chart-container">
+                    <h3>porcentagem de acertos por ALUNO</h3>
+                        <canvas baseChart
+                                [data]="barChartData"
+                                [options]="barChartOptions"
+                                [type]="barChartType">
+                        </canvas>
+                </div>
+                </div>
+            </div>
+
+            <!-- Character Section -->
+            <div class="character-section">
+                <div class="character-frame">
+                    <img src="/assets/prof.png" alt="Character" class="character-img">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Lessons Section -->
+        <div class="lessons-wrapper">
+            <div class="lessons-section">
+                <h2 class="lessons-title">ATIVIDADES FEITAS - TAXA DE CONCLUSÃO</h2>
+                <div class="modules">
+      <div class="module">
+        <div class="bar"><div class="fill" style="height:100%">100%</div></div>
+        <span class="mod">MÓDULO 1</span>
+      </div>
+      <div class="module">
+        <div class="bar"><div class="fill" style="height:50%">50%</div></div>
+        <span class="mod">MÓDULO 2</span>
+      </div>
+      <div class="module">
+        <div class="bar"></div>
+        <span class="mod">MÓDULO 3</span>
+      </div>
+      <div class="module">
+        <div class="bar"></div>
+        <span class="mod">MÓDULO 4</span>
+      </div>
+      <div class="module">
+        <div class="bar"></div>
+        <span class="mod">MÓDULO 5</span>
+      </div>
+    </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bottom-image">
+        <img src="/assets/aluno.png" alt="User Avatar" class="avatar" />
+    </div>
+  </div>
+</div>
