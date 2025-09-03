@@ -1,12 +1,12 @@
-@if (mostrarauladois) {
-  <app-pianododois></app-pianododois>
+@if (mostraraulatres) {
+  <app-pianodotres></app-pianodotres>
 }
 
-@if(!mostrarauladois){
+@if(!mostraraulatres){
   <div class="text">
     <h1>CONHECENDO AS NOTAS</h1>
     <h2>ESSA É A NOTA <span (click)="playNote('white b')">DÓ<img src="assets/notado.png"></span></h2>
-    <h3>Toque a nota com seu dedão<br>clicando na Tecla G do teclado</h3>
+    <h3>Muito bem! Vamos tentar mais uma vez</h3>
   </div>
   <ul class="set">
     <li class="white b" 
@@ -58,6 +58,6 @@
         (click)="playNote('white c')"></li>
   </ul>
   
-          <button class="btn-round" (click)="iniciarPianoDois()">➔</button>
-
+          <button class="btn-round" (click)="iniciarPiano()">➔</button>
+  <h5>Toque a nota com seu dedão, clicando na Tecla G do teclado</h5>
 }  

@@ -1,26 +1,25 @@
 import { Component, HostListener } from '@angular/core';
-import { Howl } from 'howler';
-import { Pianododois } from "./pianododois/pianododois";
+import { Pianodotres } from "./pianodotres/pianodotres";
 
 @Component({
-  selector: 'app-pianodo',
-  standalone: true,
-  templateUrl: './pianodo.html',
-  styleUrl: './pianodo.scss',
-  imports: [Pianododois]
+  selector: 'app-pianododois',
+  imports: [Pianodotres],
+  templateUrl: './pianododois.html',
+  styleUrl: './pianododois.scss'
 })
-export class Pianodo {
+export class Pianododois {
+
   private audioMap: Record<string, Howl> = {};
   activeKeys: Set<string> = new Set(); // guarda teclas "ativas"
 
-  mostrarauladois = false;
+  mostraraulatres = false;
 
-  iniciarPianoDois() {
-    this.mostrarauladois = true;
+  iniciarPiano() {
+    this.mostraraulatres = true;
   }
 
   voltarTelaInicial() {
-    this.mostrarauladois = false;
+    this.mostraraulatres = false;
   }
 
 
