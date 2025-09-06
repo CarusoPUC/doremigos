@@ -64,7 +64,7 @@ export class Schedule {
 
     // exemplo inicial
     this.events = [
-      { id: 1, title: '1º ANO - Aula 01 - Mód. 01', date: this.toIso(new Date(this.viewYear, this.viewMonth, 1)), classYear: '1º ANO', color: '#0077ff' },
+      { id: 1, title: '4º ANO - Aula 01 - Mód. 01', date: this.toIso(new Date(this.viewYear, this.viewMonth, 1)), classYear: '1º ANO', color: '#0077ff' },
       { id: 2, title: '2º ANO - Aula 02 - Mód. 01', date: this.toIso(new Date(this.viewYear, this.viewMonth, 4)), classYear: '2º ANO', color: '#ffc107' },
       { id: 3, title: '3º ANO - Aula 01 - Mód. 01', date: this.toIso(new Date(this.viewYear, this.viewMonth, 7)), classYear: '3º ANO', color: '#ff4081' },
       { id: 4, title: 'Feira de Ciências', date: this.toIso(new Date(this.viewYear, this.viewMonth, 12)), classYear: 'Todas as turmas', color: '#28a745' },
@@ -184,5 +184,9 @@ export class Schedule {
 
     goToAnalytics() {
     this.router.navigate(['/analytics']);
+  }
+
+      goToLessonOne() {
+    this.router.navigate(['/lessonOne']);
   }
 }

@@ -44,7 +44,7 @@
         <div class="tab" (click)="gotToDashboard()">AULAS</div>
         <div class="tab" (click)="goToAnalytics()">RELATÓRIO</div>
       </div>
-      <span>CRONOGRAMA - TURMA - 1° ANO </span>
+      <span>CRONOGRAMA - TURMA - 4° ANO </span>
       <!-- Main Content -->
         <div class="main-content">
 
@@ -126,7 +126,7 @@
             <div class="calendar-days">
                 <div class="day-row">
                     <button class="day-btn active">SEG</button>
-                    <div class="day-slot active">1º ANO (AULA 1 - MÓDULO 1)</div>
+                    <div class="day-slot active">4º ANO (AULA 1 - MÓDULO 1)</div>
                 </div>
                 <div class="day-row">
                     <button class="day-btn">TER</button>
@@ -164,7 +164,7 @@
             <div class="lessons-row">
                 <div class="lesson">
                 <p>AULA 01</p>
-                <div class="lesson-box">
+                <div class="lesson-box aula1" (click)="goToLessonOne()">
                     <button class="play-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
                         class="bi bi-caret-right-fill" viewBox="0 0 16 16">

@@ -35,7 +35,7 @@ export class Pianododois {
     this.audioMap['black gs'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/415-Gs.mp3'] });
     this.audioMap['white a'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/440-A.mp3'] });
     this.audioMap['black as'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/466-As.mp3'] });
-    this.audioMap['white c'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/493-B.mp3'] });
+    this.audioMap['white c'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/495-B.mp3'] });
   }
 
   playNote(noteClass: string) {

@@ -90,4 +90,18 @@ export class DashboardComponent {
   goToAnalytics() {
     this.router.navigate(['/analytics']);
   }
+
+    goToLessonOne() {
+    this.router.navigate(['/lessonOne']);
+  }
+
+  onLessonClick(moduleId: string, lessonId: string) {
+  if (moduleId === 'module1' && lessonId === 'lesson1') {
+    this.goToLessonOne();
+  } else {
+    console.log(`Clicked ${moduleId} - ${lessonId}`);
+    // aqui você pode depois colocar navegação para outras aulas
+  }
+}
+
 }
