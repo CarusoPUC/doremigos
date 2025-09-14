@@ -76,17 +76,7 @@ h1{
     color: #2D89B7;
 }
 
-.overlay {
-  position: fixed;      // cobre a tela toda
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  z-index: 9;        // fica acima de tudo
-  animation: fadeOut 1s ease forwards;
-  animation-delay: 7.2s;  // some depois de 6 segundos
-}
+
 
 /* animação */
 @keyframes fadeOut {
@@ -191,4 +181,71 @@ transform-origin: center;
   top: calc(50% - 240px - 20px);
   left: calc(50% + 500px - 100px);
 
+}
+
+.intro-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.intro-image, 
+.intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // ocupa tela inteira sem distorcer
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.unmute-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 24px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2D89B7;
+  color: #fff;
+  cursor: pointer;
+  z-index: 5;
+}
+
+
+.intro-video.hidden {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+}
+
+.intro-container,
+.overlay {
+  transition: opacity 1s ease; // garante fade suave
+}
+
+.intro-container.fade-out {
+  opacity: 0;
+  pointer-events: none; // evita interação durante fade
+}
+
+.overlay.active {
+  opacity: 1; // já existente
 }

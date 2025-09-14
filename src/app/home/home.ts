@@ -1,11 +1,12 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Howl } from 'howler';
+import { Profile } from "./profile/profile";
 
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Profile],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

@@ -1,7 +1,6 @@
 import { Component, ViewChild, ViewContainerRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Intro } from './profile/intro/intro';
-import { Profile } from './profile/profile';
+import { Profile } from './home/profile/profile';
 import { Home } from './home/home';
 import { Schedule } from "./schedule/schedule";
 import { RouterModule, RouterOutlet } from '@angular/router';
