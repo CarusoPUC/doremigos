@@ -95,10 +95,25 @@ export class DashboardComponent {
     this.router.navigate(['/lessonOne']);
   }
 
+      goToLessonTwo() {
+    this.router.navigate(['/lessonTwo']);
+  }
+
+        goToLessonThree() {
+    this.router.navigate(['/lessonThree']);
+  }
+
   onLessonClick(moduleId: string, lessonId: string) {
   if (moduleId === 'module1' && lessonId === 'lesson1') {
     this.goToLessonOne();
-  } else {
+  } 
+  if (moduleId === 'module1' && lessonId === 'lesson2'){
+    this.goToLessonTwo();
+  }
+  if (moduleId === 'module2' && lessonId === 'lesson1'){
+    this.goToLessonThree();
+  }
+  else {
     console.log(`Clicked ${moduleId} - ${lessonId}`);
     // aqui você pode depois colocar navegação para outras aulas
   }

@@ -1,0 +1,41 @@
+@if(!mostrarauladois){
+    
+    <!-- Textos -->
+    <div class="text">
+      <h1>CONHECENDO AS NOTAS NA PAUTA</h1>
+      <h2>
+        PINTE A NOTA <span class="rosa">RÉ</span> NA SUA <br>
+        <span class="rosa">PAUTA DIGITAL</span>
+      </h2>
+    </div>
+
+    <!-- Pauta musical -->
+    <div class="pauta-container">
+      <div class="pauta-wrapper">
+        <img src="assets/palheta.png" class="pauta" alt="Pauta musical">
+
+        <!-- Nota Dó (rosa) -->
+        <img src="assets/vectordo.png"
+             class="nota nota-do active">
+
+        <!-- Outras notas (cinza) -->
+        <img src="assets/vector.png" class="nota nota-re"
+                          [class.active]="isNoteActive('nota-re')"
+     (click)="activateNote('nota-re')"
+     (click)="playNote('white d')">
+        <img src="assets/vector.png" class="nota nota-mi">
+        <img src="assets/vector.png" class="nota nota-fa">
+        <img src="assets/vector.png" class="nota nota-sol">
+        <img src="assets/vector.png" class="nota nota-la">
+        <img src="assets/vector.png" class="nota nota-la2">
+        <img src="assets/vector.png" class="nota nota-si">
+      </div>
+
+    </div>
+      <!-- Mascote e balde -->
+      <div class="mascote">
+        <img src="assets/tombalde.png" alt="Mascote pintinho">
+      </div>
+    <!-- Botão -->
+    <button class="btn-round" (click)="goToDashboard()">➔</button>
+}

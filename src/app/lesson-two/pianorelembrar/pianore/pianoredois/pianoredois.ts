@@ -1,13 +1,13 @@
 import { Component, HostListener } from '@angular/core';
-import { Pianodotres } from "./pianodotres/pianodotres";
+import { Pianoretres } from "./pianoretres/pianoretres";
 
 @Component({
-  selector: 'app-pianododois',
-  imports: [Pianodotres],
-  templateUrl: './pianododois.html',
-  styleUrl: './pianododois.scss'
+  selector: 'app-pianoredois',
+  imports: [Pianoretres],
+  templateUrl: './pianoredois.html',
+  styleUrl: './pianoredois.scss'
 })
-export class Pianododois {
+export class Pianoredois {
 
   private audioMap: Record<string, Howl> = {};
   activeKeys: Set<string> = new Set(); // guarda teclas "ativas"
@@ -55,9 +55,9 @@ export class Pianododois {
   // 🔹 Pressionar tecla física
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
-    if (event.key.toLowerCase() === 'g') {
-      if (!this.activeKeys.has('white b')) {
-        this.activeKeys.add('white b');
+    if (event.key.toLowerCase() === 'u') {
+      if (!this.activeKeys.has('white d')) {
+        this.activeKeys.add('white d');
       }
     }
   }
@@ -65,8 +65,8 @@ export class Pianododois {
   // 🔹 Soltar tecla física
   @HostListener('window:keyup', ['$event'])
   handleKeyUp(event: KeyboardEvent) {
-    if (event.key.toLowerCase() === 'g') {
-      this.activeKeys.delete('white b');
+    if (event.key.toLowerCase() === 'u') {
+      this.activeKeys.delete('white d');
     }
   }
 

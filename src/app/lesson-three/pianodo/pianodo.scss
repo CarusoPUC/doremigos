@@ -166,3 +166,62 @@ ul .white.active {
 .btn-round:hover {
   background: #a8d6f4;
 }
+
+.pauta-container {
+  position: relative;
+  display: flex;          /* Flex para centralizar */
+  justify-content: center; /* Centraliza horizontalmente */
+  margin: 2rem auto;       /* Espaço acima/abaixo e centralização */
+  width: 100%;             /* Ocupar largura disponível */
+}
+
+.pauta {
+  max-width: 600px; /* limite de tamanho */
+  height: auto;
+}
+
+
+.nota {
+  position: absolute;
+  width: 30px; // tamanho da nota
+  height: auto;
+}
+
+.pauta-container {
+  display: flex;
+  justify-content: center; /* Centraliza tudo */
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.pauta-wrapper {
+  position: relative; /* referência para as notas */
+  display: inline-block;
+}
+
+.pauta {
+  max-width: 600px;
+  height: auto;
+  display: block;
+}
+
+.nota {
+  position: absolute;
+  width: 30px;
+  height: auto;
+}
+
+/* Posições relativas à pauta */
+.nota-do  { left:  110px; top: 120px; transform: scale(1.45);}  
+.nota-re  { left: 170px; top: 100px; }  
+.nota-mi  { left: 230px; top: 85px; }  
+.nota-fa  { left: 290px; top:  70px; }  
+.nota-sol { left: 350px; top:  55px; }  
+.nota-la  { left: 410px; top:  43px; }  
+.nota-la2  { left: 470px; top:  30px; }  
+.nota-si  { left: 520px; top:  13px; }  
+
+
+.nota-do.active {
+  filter: brightness(0) saturate(100%) invert(77%) sepia(16%) saturate(7370%) hue-rotate(296deg) brightness(102%) contrast(97%);
+}

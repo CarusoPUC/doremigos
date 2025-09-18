@@ -1,27 +1,30 @@
 import { Component, HostListener } from '@angular/core';
+import { Howl } from 'howler';
 import { Pianodotres } from "./pianodotres/pianodotres";
 
 @Component({
   selector: 'app-pianododois',
-  imports: [Pianodotres],
+  standalone: true,
   templateUrl: './pianododois.html',
-  styleUrl: './pianododois.scss'
+  styleUrl: './pianododois.scss',
+  imports: [Pianodotres]
 })
 export class Pianododois {
-
   private audioMap: Record<string, Howl> = {};
-  activeKeys: Set<string> = new Set(); // guarda teclas "ativas"
+  activeKeys: Set<string> = new Set(); // guarda teclas do piano "ativas"
 
-  mostraraulatres = false;
+  // 🔹 Novo: guarda notas da pauta que estão ativas
+  activeNotes: Set<string> = new Set();
 
-  iniciarPiano() {
-    this.mostraraulatres = true;
+  mostrarauladois = false;
+
+  iniciarPianoDois() {
+    this.mostrarauladois = true;
   }
 
   voltarTelaInicial() {
-    this.mostraraulatres = false;
+    this.mostrarauladois = false;
   }
-
 
   constructor() {
     this.audioMap['white c3'] = new Howl({ src: ['assets/C3.m4a'] });   // Dó grave
@@ -44,6 +47,19 @@ export class Pianododois {
     this.audioMap['black as'] = new Howl({ src: ['assets/Bb.m4a'] });   // Lá#
   }
 
+  // 🔹 Ativar/desativar notas da pauta
+   activateNote(note: string) {
+    this.activeNotes.add(note);
+  }
+
+   deactivateNote(note: string) {
+    this.activeNotes.delete(note);
+  }
+
+  isNoteActive(note: string): boolean {
+    return this.activeNotes.has(note);
+  }
+
   playNote(noteClass: string) {
     const sound = this.audioMap[noteClass];
     if (sound) {
@@ -52,12 +68,33 @@ export class Pianododois {
     }
   }
 
+// Quando clica na tecla do piano
+onMouseDown(noteClass: string) {
+  this.activeKeys.add(noteClass);
+  this.playNote(noteClass);
+
+  if (noteClass === 'white c3') {
+    this.activateNote('nota-do');
+  }
+}
+
+
+onMouseUp(noteClass: string) {
+  this.activeKeys.delete(noteClass);
+
+  if (noteClass === 'white c3') {
+    this.deactivateNote('nota-do');
+  }
+}
+
+
   // 🔹 Pressionar tecla física
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
     if (event.key.toLowerCase() === 'g') {
       if (!this.activeKeys.has('white b')) {
         this.activeKeys.add('white b');
+        this.playNote('white c3');
       }
     }
   }
@@ -67,11 +104,14 @@ export class Pianododois {
   handleKeyUp(event: KeyboardEvent) {
     if (event.key.toLowerCase() === 'g') {
       this.activeKeys.delete('white b');
+      this.deactivateNote('nota-do'); // solta a nota da pauta também
     }
   }
 
-  // helper pra HTML aplicar classe
+  // helper pra HTML aplicar classe em teclas do piano
   isActive(noteClass: string): boolean {
     return this.activeKeys.has(noteClass);
   }
+
+  
 }

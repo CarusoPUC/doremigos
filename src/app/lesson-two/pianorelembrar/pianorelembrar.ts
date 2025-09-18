@@ -1,27 +1,28 @@
 import { Component, HostListener } from '@angular/core';
-import { Pianodotres } from "./pianodotres/pianodotres";
+import { Howl } from 'howler';
+import { Pianodotres } from "../../lesson-one/pianodo/pianododois/pianodotres/pianodotres";
+import { PianoRe } from "./pianore/pianore";
 
 @Component({
-  selector: 'app-pianododois',
-  imports: [Pianodotres],
-  templateUrl: './pianododois.html',
-  styleUrl: './pianododois.scss'
+  selector: 'app-pianorelembrar',
+  standalone: true,
+  templateUrl: './pianorelembrar.html',
+  styleUrl: './pianorelembrar.scss',
+  imports: [PianoRe]
 })
-export class Pianododois {
-
+export class Pianorelembrar {
   private audioMap: Record<string, Howl> = {};
   activeKeys: Set<string> = new Set(); // guarda teclas "ativas"
 
-  mostraraulatres = false;
+  mostrarauladois = false;
 
-  iniciarPiano() {
-    this.mostraraulatres = true;
+  iniciarPianoDois() {
+    this.mostrarauladois = true;
   }
 
   voltarTelaInicial() {
-    this.mostraraulatres = false;
+    this.mostrarauladois = false;
   }
-
 
   constructor() {
     this.audioMap['white c3'] = new Howl({ src: ['assets/C3.m4a'] });   // Dó grave
@@ -44,6 +45,8 @@ export class Pianododois {
     this.audioMap['black as'] = new Howl({ src: ['assets/Bb.m4a'] });   // Lá#
   }
 
+
+
   playNote(noteClass: string) {
     const sound = this.audioMap[noteClass];
     if (sound) {
@@ -58,6 +61,7 @@ export class Pianododois {
     if (event.key.toLowerCase() === 'g') {
       if (!this.activeKeys.has('white b')) {
         this.activeKeys.add('white b');
+        this.playNote('white c3');
       }
     }
   }

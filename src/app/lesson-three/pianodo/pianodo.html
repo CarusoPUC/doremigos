@@ -4,14 +4,39 @@
 
 @if(!mostrarauladois){
   <div class="text">
-    <h1>CONHECENDO AS NOTAS</h1>
-    <h2>ESSA É A NOTA <span (click)="playNote('white b')">DÓ<img src="assets/notado.png"></span></h2>
+    <h1>CONHECENDO AS NOTAS NA PAUTA</h1>
+    <h2>ESSA É A NOTA <span (click)="playNote('white b')">DÓ</span></h2>
     <h3>Toque a nota DÓ clicando no teclado</h3>
   </div>
+    <div class="pauta-container">
+    <div class="pauta-wrapper">
+        <img src="assets/palheta.png" class="pauta" alt="Pauta musical">
+
+        <!-- Nota Dó destacada -->
+        <!-- Nota Dó destacada -->
+        <img src="assets/vectordo.png"
+            class="nota nota-do"
+            [class.active]="isNoteActive('nota-do')">
+
+
+        <!-- Outras notas (cinza) -->
+        <img src="assets/vector.png" class="nota nota-re">
+        <img src="assets/vector.png" class="nota nota-mi">
+        <img src="assets/vector.png" class="nota nota-fa">
+        <img src="assets/vector.png" class="nota nota-sol">
+        <img src="assets/vector.png" class="nota nota-la">
+        <img src="assets/vector.png" class="nota nota-la2">
+        <img src="assets/vector.png" class="nota nota-si">
+    </div>
+    </div>
+
+
   <ul class="set">
     <li class="white b" 
         [class.active]="isActive('white b')" 
-        (click)="playNote('white c3')"><h4>DÓ</h4></li>
+        
+        (mousedown)="onMouseDown('white c3')" 
+        (mouseup)="onMouseUp('white c3')"><h4>DÓ</h4></li>
   
     <li class="black cs" 
         [class.active]="isActive('black cs')" 

@@ -1,12 +1,11 @@
 @if (mostrarauladois) {
-  <app-pianododois></app-pianododois>
+  <app-pianore></app-pianore>
 }
 
 @if(!mostrarauladois){
   <div class="text">
-    <h1>CONHECENDO AS NOTAS</h1>
-    <h2>ESSA É A NOTA <span (click)="playNote('white b')">DÓ<img src="assets/notado.png"></span></h2>
-    <h3>Toque a nota DÓ clicando no teclado</h3>
+    <h1>VAMOS RELEMBRAR</h1>
+    <h3>TOQUE A NOTA <span (click)="playNote('white b')">DÓ</span><BR>CLICANDO NO TECLADO</h3>
   </div>
   <ul class="set">
     <li class="white b" 

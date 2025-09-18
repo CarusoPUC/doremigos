@@ -11,7 +11,7 @@
   <ul class="set">
     <li class="white b" 
         [class.active]="isActive('white b')" 
-        (click)="playNote('white b')"><h4>G</h4></li>
+        (click)="playNote('white c3')"><h4>DÓ</h4></li>
   
     <li class="black cs" 
         [class.active]="isActive('black cs')" 
@@ -55,9 +55,12 @@
   
     <li class="white c" 
         [class.active]="isActive('white c')" 
-        (click)="playNote('white c')"></li>
+        (click)="playNote('white b')"></li>
+
+    <li class="white c" 
+        [class.active]="isActive('white c')" 
+        (click)="playNote('white c4')"></li>
   </ul>
   
           <button class="btn-round" (click)="iniciarPiano()">➔</button>
-  <h5>Toque a nota com seu dedão, clicando na Tecla G do teclado</h5>
 }  

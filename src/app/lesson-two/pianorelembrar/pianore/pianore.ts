@@ -1,27 +1,27 @@
 import { Component, HostListener } from '@angular/core';
-import { Pianodotres } from "./pianodotres/pianodotres";
+import { Howl } from 'howler';
+import { Pianoredois } from './pianoredois/pianoredois';
 
 @Component({
-  selector: 'app-pianododois',
-  imports: [Pianodotres],
-  templateUrl: './pianododois.html',
-  styleUrl: './pianododois.scss'
+  selector: 'app-pianore',
+  standalone: true,
+  templateUrl: './pianore.html',
+  styleUrl: './pianore.scss',
+  imports: [Pianoredois]
 })
-export class Pianododois {
-
+export class PianoRe {
   private audioMap: Record<string, Howl> = {};
   activeKeys: Set<string> = new Set(); // guarda teclas "ativas"
 
-  mostraraulatres = false;
+  mostrarauladois = false;
 
-  iniciarPiano() {
-    this.mostraraulatres = true;
+  iniciarPianoDois() {
+    this.mostrarauladois = true;
   }
 
   voltarTelaInicial() {
-    this.mostraraulatres = false;
+    this.mostrarauladois = false;
   }
-
 
   constructor() {
     this.audioMap['white c3'] = new Howl({ src: ['assets/C3.m4a'] });   // Dó grave
@@ -44,6 +44,8 @@ export class Pianododois {
     this.audioMap['black as'] = new Howl({ src: ['assets/Bb.m4a'] });   // Lá#
   }
 
+
+
   playNote(noteClass: string) {
     const sound = this.audioMap[noteClass];
     if (sound) {
@@ -55,9 +57,10 @@ export class Pianododois {
   // 🔹 Pressionar tecla física
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
-    if (event.key.toLowerCase() === 'g') {
-      if (!this.activeKeys.has('white b')) {
-        this.activeKeys.add('white b');
+    if (event.key.toLowerCase() === 'u') {
+      if (!this.activeKeys.has('white d')) {
+        this.activeKeys.add('white d');
+        this.playNote('white d');
       }
     }
   }
@@ -65,8 +68,8 @@ export class Pianododois {
   // 🔹 Soltar tecla física
   @HostListener('window:keyup', ['$event'])
   handleKeyUp(event: KeyboardEvent) {
-    if (event.key.toLowerCase() === 'g') {
-      this.activeKeys.delete('white b');
+    if (event.key.toLowerCase() === 'u') {
+      this.activeKeys.delete('white d');
     }
   }
 

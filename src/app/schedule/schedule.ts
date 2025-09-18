@@ -189,4 +189,8 @@ export class Schedule {
       goToLessonOne() {
     this.router.navigate(['/lessonOne']);
   }
+
+        goToLessonTwo() {
+    this.router.navigate(['/lessonTwo']);
+  }
 }
