@@ -34,6 +34,6 @@ export class Pianodotres {
   }
 
     goToDashboard() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/muitobemDo']);
   }
 }

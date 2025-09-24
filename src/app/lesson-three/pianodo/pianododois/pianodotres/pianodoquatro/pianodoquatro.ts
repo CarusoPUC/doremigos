@@ -114,6 +114,6 @@ onMouseUp(noteClass: string) {
   }
 
     goToDashboard() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/muitobemreturmaum']);
   }
 }

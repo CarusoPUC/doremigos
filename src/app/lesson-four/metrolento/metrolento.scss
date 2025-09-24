@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  padding: 3rem;
+  font-family: 'Poppins', sans-serif;
+
+  h2 {
+    margin-top: 9rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2b6ea6;
+    margin-bottom: 6rem;
+  }
+
+  .pauta-container {
+    position: relative;
+    display: inline-block;
+
+    .linha-tartaruga {
+      position: absolute;
+      top: -15px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #b3e5fc;
+      z-index: 1;
+    }
+
+    .pauta {
+      width: 900px;  /* aumentada */
+    }
+
+    .tartaruga {
+      position: absolute;
+      top: -70px; /* ajustado para cima da linha */
+      left: 20px;
+      width: 100px; /* aumentada */
+      z-index: 2;
+    }
+
+    .notas {
+      position: absolute;
+      bottom: 62px;
+      left: 190px;
+      display: flex;
+      gap: 105px;
+
+      .nota {
+        width: 70px; /* aumentada */
+        height: auto;
+      }
+    }
+  }
+
+  .fala-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 3rem;
+    margin-left: 12vw;
+    gap: 2rem;
+
+    .passaro {
+      width: 420px; /* aumentada */
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      left: 20vw;
+    }
+
+    .balao {
+      background: #b3e5fc;
+      border-radius: 30px;
+      padding: 1rem 2rem;
+      max-width: 400px;
+      font-size: 2rem;
+      color: #0D4B69;
+      text-align: left;
+    }
+
+    .metronomo {
+      width: 220px; /* aumentada */
+      height: auto;
+    }
+  }
+}

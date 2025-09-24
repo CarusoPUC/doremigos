@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2D89B7; // azul
+    margin-bottom: 6rem;
+    margin-left: 16px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .icon-btn,
+  .play-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #000;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .play-btn {
+    background: #ddd;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 2rem;
+      color: #666;
+    }
+  }
+
+  .bi-play-fill{
+    margin-left: 0.3rem;
+    color: #a1a1a1;
+  }
+}

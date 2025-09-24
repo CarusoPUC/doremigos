@@ -49,4 +49,7 @@ export class Home implements OnInit{
   goToSchedule() {
     this.router.navigate(['/schedule']);
   }
+  goToScheduleFirst() {
+    this.router.navigate(['/scheduleFirst']);
+  }
 }

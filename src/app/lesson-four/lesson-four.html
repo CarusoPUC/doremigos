@@ -1,0 +1,49 @@
+@if (mostrarPiano) {
+    <app-metrolento></app-metrolento>
+}
+
+<!-- Se mostrarPiano for false, mostra a tela inicial -->
+@if (!mostrarPiano) {
+  <div class="container">
+    <!-- Mascote -->
+    <img src="assets/tom.png" alt="Mascote Tom" class="mascote" />
+
+    <div class="background">
+      <!-- Texto principal -->
+      <h2 class="titulo">CONHECENDO OS<br>ANDAMENTO</h2>
+      <p class="subtitulo">VAMOS APRENDER OS ANDAMENTOS</p>
+
+      <!-- Botão Play -->
+      <button class="btn-play" (click)="iniciarPiano()">
+        <span class="play-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+               class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+          </svg>
+        </span>
+      </button>
+
+      <!-- Botões auxiliares -->
+      <div class="footer">
+        <button class="btn-round" (click)="abrirModal()">?</button>
+        <button class="btn-round" (click)="voltarTelaInicial()">⟳</button>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Modal explicativo -->
+<!-- Modal explicativo com overlay -->
+@if(mostrarModal){
+  <div class="modal-backdrop">
+    <div class="modal" [@modalAnimation]="animacaoState">
+      <button class="btn-close" (click)="fecharModal()">×</button>
+      <h3>Sobre esta aula</h3>
+      <p>
+        Essa aula foi feita a partir do conteúdo da <strong>ATIVIDADE 3</strong> referente à <strong>SITUAÇÃO DE APRENDIZAGEM III</strong> do Currículo em Ação.<br>
+        Nessa aula, <strong>introduziremos os andamentos.</strong>Apresentaremos o <strong>devagar, médio e rápido.</strong>A pauta será representada com notas, e <strong>a cada nota, os alunos em uma dinâmica em sala, devem bater palmas acompanhando a velocidade do animal junto com o metrônomo</strong>
+      </p>
+    </div>
+  </div>
+}
+

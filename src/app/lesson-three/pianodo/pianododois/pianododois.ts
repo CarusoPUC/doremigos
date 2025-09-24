@@ -1,13 +1,14 @@
 import { Component, HostListener } from '@angular/core';
 import { Howl } from 'howler';
 import { Pianodotres } from "./pianodotres/pianodotres";
+import { Muitobemdo } from "./muitobemdo/muitobemdo";
 
 @Component({
   selector: 'app-pianododois',
   standalone: true,
   templateUrl: './pianododois.html',
   styleUrl: './pianododois.scss',
-  imports: [Pianodotres]
+  imports: [ Muitobemdo]
 })
 export class Pianododois {
   private audioMap: Record<string, Howl> = {};

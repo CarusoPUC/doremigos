@@ -19,12 +19,12 @@ interface Module {
 }
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.html',
-  styleUrls: ['./dashboard.scss'],
+  selector: 'app-dashboardturmaum',
+  templateUrl: './dashboardturmaum.html',
+  styleUrls: ['./dashboardturmaum.scss'],
   imports: [CommonModule]
 })
-export class DashboardComponent {
+export class DashboardturmaUmComponent {
   activeTab: 'cronograma' | 'aulas' | 'relatorio' = 'aulas';
   constructor( private router: Router) {}
   modules: Module[] = [
@@ -84,7 +84,7 @@ export class DashboardComponent {
   }
 
   goToSchedule() {
-    this.router.navigate(['/schedule']);
+    this.router.navigate(['/scheduleFirst']);
   }
   
   goToAnalytics() {
@@ -112,20 +112,23 @@ export class DashboardComponent {
   }
 
   onLessonClick(moduleId: string, lessonId: string) {
-  if (moduleId === 'module1' && lessonId === 'lesson1') {
-    this.goToLessonOne();
-  } 
-  if (moduleId === 'module1' && lessonId === 'lesson2'){
-    this.goToLessonTwo();
-  }
-  if (moduleId === 'module2' && lessonId === 'lesson1'){
-    this.goToLessonThree();
-  }
+  // if (moduleId === 'module1' && lessonId === 'lesson1') {
+  //   this.goToLessonOne();
+  // } 
+  // if (moduleId === 'module1' && lessonId === 'lesson2'){
+  //   this.goToLessonTwo();
+  // }
+  // if (moduleId === 'module2' && lessonId === 'lesson1'){
+  //   this.goToLessonThree();
+  // }
   // if (moduleId === 'module3' && lessonId === 'lesson1'){
   //   this.goToLessonFour();
   // }
-  if (moduleId === 'module2' && lessonId === 'lesson2'){
-    this.goToLessonThreeTwo();
+  // if (moduleId === 'module2' && lessonId === 'lesson2'){
+  //   this.goToLessonThreeTwo();
+  // }
+  if (moduleId === 'module3' && lessonId === 'lesson1'){
+    this.goToLessonFour();
   }
   else {
     console.log(`Clicked ${moduleId} - ${lessonId}`);

@@ -1,0 +1,157 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.background{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  z-index: 3;
+  font-family: 'Poppins', sans-serif;
+  width: 40%;
+  height: 50vh;
+}
+
+.mascote {
+  width: 290px;
+  margin-bottom: -15vh;
+}
+
+.titulo {
+  font-size: 50px;
+  font-weight: bold;
+  color: #2a87c9;
+  margin: 8px 0;
+}
+
+.subtitulo {
+  font-size: 25px;
+  color: #3a94d4;
+  margin-bottom: 32px;
+}
+
+.btn-play {
+  background: #6ec1f4;
+  border: none;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: 0.3s;
+}
+
+.btn-play:hover {
+  background: #3a94d4;
+}
+
+.play-icon {
+  font-size: 40px;
+  color: white;
+  margin-left: 4px; /* ajuste para centralizar */
+}
+
+.footer {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 32px;
+}
+
+.btn-round {
+  background: #c9e6f9;
+  border: none;
+  border-radius: 50%;
+  width: 86px;
+  height: 86px;
+  font-size: 24px;
+  color: #2a87c9;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-round:hover {
+  background: #a8d6f4;
+}
+
+/* Overlay escuro */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* escurece o fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Modal centralizado */
+.modal {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 32%, rgb(141, 203, 236) 100%);
+  padding: 24px 32px;
+  border-radius: 12px;
+  width: 690px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+
+  h3 {
+    color: #2a87c9;
+    margin-bottom: 12px;
+    font-size: 48px;
+  }
+
+  p {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  /* Botão fechar circular no canto superior direito */
+  .btn-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #6ec1f4;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+
+  .btn-close:hover {
+    background: #3a94d4;
+  }
+}
+
+.alunosAviso{
+    color: #FF7FB3;
+}
+

@@ -1,0 +1,209 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="layout">
+
+      <!-- Left Sidebar - User Profile -->
+      <div class="sidebar">
+        <!-- Profile Section -->
+        <div class="profile-section">
+          <div class="profile-image-container">
+            <div class="profile-gradient">
+              <div class="profile-avatar">
+                <img src="/assets/prof.png" alt="User Avatar" class="avatar" />
+                <!-- <img src="/images/profile-overlay.png" alt="" class="profile-overlay" /> -->
+              </div>
+            </div>
+          </div>
+          <p class="profile-name">Adalberto Silva</p>
+
+          <!-- Placeholder Bars -->
+          <div class="placeholder-bars">
+            <div class="bar">EDITAR PERFIL</div>
+            <div class="bar">TURMAS</div>
+          </div>
+          
+        </div>
+        
+        <!-- Bottom Logo -->
+        <div class="logo-container">
+          <div class="placeholder-bars">
+              <div class="bar">AJUDA</div>
+                <div class="bar">CONFIGURAÇÕES</div>
+                <div class="bar">LOGOUT</div>
+          </div>
+          <img src="/assets/logo.png" alt="Logo" class="logo" />
+        </div>
+      </div>
+
+      <!-- Right Content - Grade Cards -->
+      <div class="right-section">
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <div class="tab active">CRONOGRAMA</div>
+        <div class="tab" (click)="gotToDashboard()">AULAS</div>
+      </div>
+      <span>CRONOGRAMA - TURMA - 4° ANO </span>
+      <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Weekly Calendar -->
+            <div class="weekly-calendar">
+                <!-- seu header já existente -->
+                <div class="calendar-header">
+                <p>CALENDÁRIO SEMANAL</p>
+                <button class="add-btn" (click)="toggleCalendar()">+</button>
+                </div>
+
+                <!-- === MODAL CALENDÁRIO === -->
+                <div class="modal-overlay" *ngIf="showCalendar" (click)="closeModal()" aria-hidden="false">
+                <div class="modal-calendar" role="dialog" aria-modal="true" (click)="$event.stopPropagation()" [@fadeZoom]>
+
+                    <div class="modal-header">
+                    <div class="left-controls">
+                        <select [(ngModel)]="filter" (ngModelChange)="onFilterChange()">
+                        <option *ngFor="let c of classes" [value]="c">{{ c }}</option>
+                        </select>
+                    </div>
+
+                    <div class="month-nav">
+                        <button class="nav-btn" (click)="prevMonth()">‹</button>
+                        <div class="month-title">{{ formatMonthYear() }}</div>
+                        <button class="nav-btn" (click)="nextMonth()">›</button>
+                    </div>
+
+                    <button class="close-x" (click)="closeModal()">✕</button>
+                    </div>
+
+                    <div class="calendar-grid">
+                    <div class="day-name" *ngFor="let d of weekDays">{{ d }}</div>
+                    <div class="day-cell" *ngFor="let cell of calendarDays"
+                        [class.other-month]="!cell.isCurrentMonth"
+                        (click)="onClickDay(cell)">
+                        <div class="day-number">{{ cell.display }}</div>
+                        <div class="events">
+                        <div *ngFor="let ev of cell.events"
+                            class="day-event"
+                            [style.borderLeftColor]="ev.color"
+                            (click)="editEvent(ev, $event)">
+                            <div class="ev-title">{{ ev.title }}</div>
+                            <div class="ev-sub">{{ ev.classYear }}</div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Formulário Criar/Editar Evento -->
+                    <div class="event-form" *ngIf="showForm" [@fadeZoom]>
+                    <h3>{{ editingEvent ? 'Editar Evento' : 'Novo Evento' }}</h3>
+                    <label>Título:
+                        <input [(ngModel)]="formData.title" placeholder="Título do evento" />
+                    </label>
+                    <label>Data:
+                        <input type="date" [(ngModel)]="formData.date" />
+                    </label>
+                    <label>Turma:
+                        <select [(ngModel)]="formData.classYear">
+                        <option *ngFor="let c of classes" [value]="c">{{ c }}</option>
+                        </select>
+                    </label>
+                    <label>Cor:
+                        <input type="color" [(ngModel)]="formData.color" />
+                    </label>
+                    <div class="form-actions">
+                        <button (click)="saveEvent()">Salvar</button>
+                        <button *ngIf="editingEvent" (click)="deleteEvent()">Excluir</button>
+                        <button (click)="showForm=false">Cancelar</button>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+
+
+
+            <div class="calendar-days">
+                <div class="day-row">
+                    <button class="day-btn active">SEG</button>
+                    <div class="day-slot active">4º ANO (AULA 1 - MÓDULO 1)</div>
+                </div>
+                <div class="day-row">
+                    <button class="day-btn">TER</button>
+                    <div class="day-slot">2º ANO, TURMA A (AULA 6 - MÓDULO 1)</div>
+                </div>
+                <div class="day-row">
+                    <button class="day-btn">QUA</button>
+                    <div class="day-slot">3º ANO (AULA 2 - MÓDULO 3)</div>
+                </div>
+                <div class="day-row">
+                    <button class="day-btn">QUI</button>
+                    <div class="day-slot">1º ANO (AULA 2 - MÓDULO 1)</div>
+                </div>
+                <div class="day-row">
+                    <button class="day-btn">SEX</button>
+                    <div class="day-slot">2º ANO, TURMA B (AULA 2 - MÓDULO 1)</div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Character Section -->
+            <div class="character-section">
+                <div class="character-frame">
+                    <img src="/assets/prof.png" alt="Character" class="character-img">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Lessons Section -->
+        <div class="lessons-wrapper">
+        <h2 class="lessons-title">CONTINUE DA ONDE PAROU</h2>
+
+        <div class="lessons-section">
+            <div class="lessons-row">
+                <div class="lesson">
+                <p>AULA 01</p>
+                <div class="lesson-box aula1" (click)="goToLessonFour()">
+                    <button class="play-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                    </button>
+                </div>
+                </div>
+
+                <div class="lesson">
+                <p>AULA 02</p>
+                <div class="lesson-box">
+                    <button class="play-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                    </button>
+                </div>
+                </div>
+
+                <div class="lesson">
+                <p>AULA 03</p>
+                <div class="lesson-box">
+                    <button class="play-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
