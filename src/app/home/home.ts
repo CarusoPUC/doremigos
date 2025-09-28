@@ -6,7 +6,7 @@ import { Profile } from "./profile/profile";
 
 @Component({
   selector: 'app-home',
-  imports: [Profile],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

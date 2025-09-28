@@ -12,6 +12,7 @@ export class Pianodotres {
 
     constructor(private router: Router) {
     this.audioMap['white b'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/261-C.mp3'] });  // Dó
+    this.audioMap['white c3'] = new Howl({ src: ['assets/C3.m4a'] });   // Dó grave
     this.audioMap['black cs'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/277-Cs.mp3'] });
     this.audioMap['white d'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/293-D.mp3'] });
     this.audioMap['black ds'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/311-Ds.mp3'] });

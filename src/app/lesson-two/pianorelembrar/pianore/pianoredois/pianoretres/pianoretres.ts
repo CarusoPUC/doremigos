@@ -11,9 +11,9 @@ export class Pianoretres {
     private audioMap: Record<string, Howl> = {};
 
     constructor(private router: Router) {
+    this.audioMap['white d']  = new Howl({ src: ['assets/D.m4a'] });    // Ré
     this.audioMap['white b'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/261-C.mp3'] });  // Dó
     this.audioMap['black cs'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/277-Cs.mp3'] });
-    this.audioMap['white d'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/293-D.mp3'] });
     this.audioMap['black ds'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/311-Ds.mp3'] });
     this.audioMap['white e'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/329-E.mp3'] });
     this.audioMap['white f'] = new Howl({ src: ['https://mczak.com/code/piano/assets/midia/349-F.mp3'] });

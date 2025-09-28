@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-metrolento',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './metrolento.scss'
 })
 export class Metrolento {
-
+  constructor(private router: Router){
+    
+  }
+        goToMetroMedio() {
+    this.router.navigate(['/metromedio']);
+  }
 }

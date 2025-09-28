@@ -110,6 +110,10 @@ export class DashboardComponent {
         goToLessonThreeTwo() {
     this.router.navigate(['/lessonthreetwo']);
   }
+  
+        goToTurmas() {
+    this.router.navigate(['/home']);
+  }
 
   onLessonClick(moduleId: string, lessonId: string) {
   if (moduleId === 'module1' && lessonId === 'lesson1') {

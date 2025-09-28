@@ -1,4 +1,3 @@
-<app-profile></app-profile>
 <div class="container">
   <div class="inner-container">
     <div class="layout">
@@ -20,7 +19,7 @@
           <!-- Placeholder Bars -->
           <div class="placeholder-bars">
             <div class="bar">EDITAR PERFIL</div>
-            <div class="bar">TURMAS</div>
+            <div class="bar t">TURMAS</div>
           </div>
           
         </div>
@@ -50,8 +49,8 @@
           </div>
 
           <!-- 2° ANO - TURMA B Card -->
-          <div #noteRe class="card small-card shadow-yellow">
-            <h2 class="card-title text-yellow">2° ANO - TURMA B</h2>
+          <div #noteRe class="card small-card shadow-yellow" (click)="goToScheduleFirst()">
+            <h2 class="card-title text-yellow">1° ANO</h2>
             <div  class="card-content bg-yellow">
                 <img src="/assets/nota2b.png" alt="2° Ano conteúdo" class="card-image" />
             </div>
@@ -63,7 +62,7 @@
         <div class="row">
           <!-- 2° ANO - TURMA 1 Card -->
           <div #noteMi class="card third-card shadow-red">
-            <h2 class="card-title text-red">2° ANO - TURMA 1</h2>
+            <h2 class="card-title text-red">2° ANO - TURMA A</h2>
             <div  class="card-content bg-red">
                 <img src="/assets/nota2a.png" alt="2° Ano conteúdo" class="card-image" />
             </div>
@@ -78,8 +77,8 @@
           </div>
 
           <!-- 4° ANO Card -->
-          <div #noteSol class="card third-card shadow-pink"  (click)="goToScheduleFirst()">
-            <h2 class="card-title text-pink">1° ANO</h2>
+          <div #noteSol class="card third-card shadow-pink">
+            <h2 class="card-title text-pink">2° ANO - TURMA B</h2>
             <div  class="card-content bg-pink">
                 <img src="/assets/nota4.png" alt="2° Ano conteúdo" class="card-image" />
             </div>

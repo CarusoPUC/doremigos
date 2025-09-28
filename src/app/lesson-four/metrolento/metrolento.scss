@@ -8,16 +8,26 @@
   font-family: 'Poppins', sans-serif;
 
   h2 {
-    margin-top: 9rem;
+    margin-top: 2rem;
     font-size: 2rem;
     font-weight: bold;
-    color: #2b6ea6;
-    margin-bottom: 6rem;
+    color: #ff69bd;
+    margin-bottom: 2rem;
   }
 
   .pauta-container {
     position: relative;
     display: inline-block;
+    height: 40vh;
+    width: 50vw;
+    background-color: red;
+    background-image: url("/assets/tartaruga.gif");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 50% 40%;
+    border: 3px solid #b3e5fc;
+    border-radius: 20px;
+    box-shadow: 0px 4px 30px #0c4a69;
 
     .linha-tartaruga {
       position: absolute;
@@ -33,13 +43,6 @@
       width: 900px;  /* aumentada */
     }
 
-    .tartaruga {
-      position: absolute;
-      top: -70px; /* ajustado para cima da linha */
-      left: 20px;
-      width: 100px; /* aumentada */
-      z-index: 2;
-    }
 
     .notas {
       position: absolute;
@@ -80,9 +83,61 @@
       text-align: left;
     }
 
-    .metronomo {
-      width: 220px; /* aumentada */
-      height: auto;
-    }
-  }
+.metronomo {
+  width: 220px;
+  height: auto;
+  display: block; // garante quebra de linha
+  margin: 0 auto;
 }
+
+.metronomo-label {
+  font-size: 1.2rem;
+  color: #0D4B69;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+  }
+
+  
+}
+
+.btn-round {
+  background: #c9e6f9;
+  border: none;
+  border-radius: 50%;
+  width: 86px;
+  height: 86px;
+  font-size: 24px;
+  color: #2a87c9;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.btn-round:hover {
+  background: #a8d6f4;
+}
+
+.metronomo-container {
+  display: flex;
+  flex-direction: column; /* empilha vídeo em cima, texto embaixo */
+  align-items: center;   /* centraliza horizontalmente */
+}
+
+.metronomo {
+  width: 220px;
+  height: auto;
+}
+
+.metronomo-label {
+  font-size: 1.2rem;
+  color: #0D4B69;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+

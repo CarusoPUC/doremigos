@@ -192,4 +192,8 @@ showCalendar = false;
         goToLessonFour() {
     this.router.navigate(['/lessonFour']);
   }
+
+          goToTurmas() {
+    this.router.navigate(['/home']);
+  }
 }

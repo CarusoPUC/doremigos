@@ -193,4 +193,8 @@ export class Schedule {
         goToLessonTwo() {
     this.router.navigate(['/lessonTwo']);
   }
+
+          goToTurmas() {
+    this.router.navigate(['/home']);
+  }
 }

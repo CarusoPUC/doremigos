@@ -91,7 +91,6 @@ playVideo(): void {
   setTimeout(() => {
     this.showIntroImage = false; // some com PNG e botão
     this.showVideo = true;       // mostra vídeo
-    this.introImage.nativeElement.style.display = 'none';
     this.playButton.nativeElement.style.display = 'none';
     
     const video = this.introVideo?.nativeElement;
@@ -123,6 +122,9 @@ onVideoEnded(): void {
     this.introContainer.nativeElement.style.display = 'none';
     this.overlayId.nativeElement.style.display = 'none';
   }, 1000); // deve bater com a duração do transition
+
+  this.router.navigate(['/home']);
+  
 }
 
 

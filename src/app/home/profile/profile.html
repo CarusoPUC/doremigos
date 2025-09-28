@@ -1,19 +1,12 @@
 <div class="overlay" [class.active]="overlayActive" #overlayId></div>
 
 <div class="intro-container" #introContainer>
-  <!-- Imagem inicial -->
-  <img #introImage 
-       src="assets/doremigos.png" 
-       alt="Intro estática"
-       class="intro-image"/>
-
-  <!-- Vídeo -->
   <video #introVideo
          class="intro-video"
          playsinline
          style="display: none"
          (ended)="onVideoEnded()">
-    <source src="assets/doremigos.mp4" type="video/mp4">
+    <source src="assets/splash_video.mp4" type="video/mp4">
   </video>
 
   <!-- Botão play -->

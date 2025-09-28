@@ -48,6 +48,19 @@
   margin-top: 20px;
 }
 
+.btnPlay{
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #B3E1F9;
+  stroke-width: 0;
+  border: 0;
+  border-radius: 50%;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
 .botoes button {
   background-color: #00a0f0;
   color: white;
