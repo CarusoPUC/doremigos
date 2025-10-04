@@ -207,19 +207,19 @@ ul .white.active {
 
 .nota {
   position: absolute;
-  width: 30px;
+  width: 38px;
   height: auto;
 }
 
 /* Posições relativas à pauta */
-.nota-do  { left:  110px; top: 120px; transform: scale(1.45);}  
-.nota-re  { left: 170px; top: 100px; }  
-.nota-mi  { left: 230px; top: 85px; }  
-.nota-fa  { left: 290px; top:  70px; }  
-.nota-sol { left: 350px; top:  55px; }  
-.nota-la  { left: 410px; top:  43px; }  
-.nota-la2  { left: 470px; top:  30px; }  
-.nota-si  { left: 520px; top:  13px; }  
+.nota-do  { left:  100px; top: 110px; transform: scale(1.45);}  
+.nota-re  { left: 160px; top: 80px; }  
+.nota-mi  { left: 220px; top: 65px; }  
+.nota-fa  { left: 280px; top:  53px; }  
+.nota-sol { left: 340px; top:  38px; }  
+.nota-la  { left: 400px; top:  25px; }  
+.nota-la2  { left: 460px; top:  10px; }  
+.nota-si  { left: 510px; top:  -4px; }  
 
 
 .nota-do.active {

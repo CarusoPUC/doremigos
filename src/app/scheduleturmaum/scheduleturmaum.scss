@@ -7,7 +7,7 @@
   align-items: center;
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 1) 50%, #ffdb77 100%);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 1) 30%, #FFBC00 100%);
 }
 
 .inner-container {
@@ -42,7 +42,7 @@
   width: 100%;
   border-radius: 14px;
   padding: 14px;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +75,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: linear-gradient(180deg, #fff8e3 0%, #ffd666 100%);
+  background: linear-gradient(180deg, #009be8 0%, #0c4a69 100%);
 }
 
 .profile-avatar {
@@ -118,11 +118,11 @@
 .placeholder-bars .bar {
   width: 92%;
   height: 44px;
-  background: #FFBC00;
+  background: #B3E1F9;
   border-radius: 15px;
   margin: 0px 0 22px 0;
-  box-shadow: 0px 4px 9px #997104;
-  color: #5e4500;
+  box-shadow: 0px 4px 9px #0c4a69;
+  color: #0D4B69;
   text-align: center;
   align-items: center;
   align-content: center;
@@ -162,7 +162,7 @@
   border-radius: 14px;
   padding: 10px;
   width: 98%;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
 }
 
 .tab {
@@ -171,20 +171,20 @@
   font-size: 20px;
   padding: 8px 34px;
   border-radius: 14px;
-  background-color: #FFBC00;
-  color: #5e4500;
+  background-color: #009be8;
+  color: #0d4b69;
   font-weight: 600;
   cursor: pointer;
 }
 
 .tab.active {
-  background-color: #af8000;
+  background-color: #155e82;
   color: #fff;
 }
 
 span{
     align-self: start;
-    color: #af8000;
+    color: #2D89B7;
     font-size: 30px;
     font-weight: 600;
     margin-top: 15px;
@@ -215,7 +215,7 @@ span{
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
   padding: 0px 16px;
 }
 
@@ -229,7 +229,7 @@ span{
 
 .calendar-header p {
   font-weight: bold;
-  color: #FFBC00;
+  color: #004a75;
   text-align: center;
   margin-top: 32px;
   font-size: 20px;
@@ -238,7 +238,7 @@ span{
 .add-btn {
   width: 38px;
   height: 38px;
-  background-color: #FFBC00;
+  background-color: #0D4B69;
   
   border-radius: 50%;
   display: flex;
@@ -258,7 +258,7 @@ span{
 
 /* Days container */
 .calendar-days {
-  background: #fff4d4;
+  background: #c8e9fa;
   border-radius: 14px;
   padding: 16px;
   display: flex;
@@ -279,7 +279,7 @@ span{
 /* Buttons */
 .day-btn {
   background: #ffffff;
-  color: #af8000;
+  color: #004a75;
   text-transform: uppercase;
   font-weight: bold;
   padding: 8px 18px;
@@ -294,10 +294,10 @@ span{
 
 /* Active button */
 .day-btn.active {
-  background: #FFBC00;
+  background: #1590CD;
   color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
 }
 
 .aula1{
@@ -310,7 +310,7 @@ span{
   background: #ffffff;
   padding: 8px 14px;
   border-radius: 10px;
-  color: #af8000;
+  color: #004a75;
   font-weight: 500;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
   font-weight: 600;
@@ -318,8 +318,8 @@ span{
 
 /* Active slot */
 .day-slot.active {
-  background: #FFBC00;
-  box-shadow: 0px 4px 9px #FFBC00;
+  background: #1590CD;
+  box-shadow: 0px 4px 9px #0c4a69;
   color: #ffffff;
   font-weight: bold;
 }
@@ -332,7 +332,7 @@ span{
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
   background-color: white;
 }
 
@@ -343,7 +343,7 @@ span{
   justify-content: center;
   align-items: center;
   background: #009BE8;
-  background: linear-gradient(180deg, #FFBC00 0%, #7C672D 75%);
+  background: linear-gradient(180deg, rgba(0, 155, 232, 1) 0%, rgba(13, 75, 105, 1) 75%);
   border-radius: 15px;
   overflow: hidden !important;
 }
@@ -368,7 +368,7 @@ span{
 .lessons-title {
   font-size: 30px;
   font-weight: 600;
-  color: #af8000;
+  color: #2D89B7;
   margin: 0;
   text-transform: uppercase;
   margin-top: 15px;
@@ -379,7 +379,7 @@ span{
   background-color: #fff;
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
 }
 
 /* Linha com as 3 aulas */
@@ -411,7 +411,7 @@ span{
   width: 100%;
   max-width: 250px;
   height: 120px;
-  background-color: #ffefc2;
+  background-color: #B3E1F9;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -424,7 +424,7 @@ span{
   height: 64px;
   border: none;
   border-radius: 50%;
-  background-color: #FFBC00;
+  background-color: #009BE8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -434,7 +434,7 @@ span{
 .play-btn svg {
   width: 28px;
   height: 28px;
-  fill: #ffefc2; /* cor do ícone (pode trocar para #ff0000 se quiser vermelho) */
+  fill: #B3E1F9; /* cor do ícone (pode trocar para #ff0000 se quiser vermelho) */
 }
 
 /* Overlay */
@@ -453,7 +453,7 @@ span{
 /* Modal */
 .modal-calendar {
   width: min(1100px, 98%);
-  background: linear-gradient(160deg, #ffffff 50%, #ffefc2 100%);
+  background: linear-gradient(160deg, #ffffff 50%, #cceefa 100%);
   border-radius: 14px;
   box-shadow: 0 6px 24px rgba(4,41,64,0.45);
   padding: 18px;
@@ -489,7 +489,7 @@ span{
 }
 
 .nav-btn {
-  background: #FFBC00;
+  background: #0d4b69;
   border: none;
   color: white;
   width: 36px;
@@ -501,7 +501,7 @@ span{
 
 .month-title {
   font-weight: 700;
-  color: #FFBC00;
+  color: #004a75;
   padding: 4px 10px;
 }
 
@@ -526,7 +526,7 @@ span{
   text-align: center;
   font-weight: 700;
   padding: 10px 6px;
-  background: #FFBC00;
+  background: #009be8;
   color: #fff;
   border-radius: 8px;
   font-size: 14px;
@@ -551,7 +551,7 @@ span{
 
 .day-number {
   font-weight: 700;
-  color: #FFBC00;
+  color: #0d4b69;
   font-size: 14px;
 }
 
@@ -568,7 +568,7 @@ span{
   padding: 6px 8px;
   background: #e7f7ff;
   border-radius: 8px;
-  border-left: 5px solid #FFBC00;
+  border-left: 5px solid #0077ff;
   font-size: 12px;
   font-weight: 600;
   color: #004a75;
@@ -598,7 +598,7 @@ span{
   flex-direction: column;
   gap: 10px;
 
-  h3 { margin: 0; color: #FFBC00; }
+  h3 { margin: 0; color: #0d4b69; }
 
   label {
     display: flex;
@@ -625,7 +625,7 @@ span{
       border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      background: #FFBC00;
+      background: #009be8;
       color: #fff;
 
       &:nth-child(2) { background: #d81b60; }

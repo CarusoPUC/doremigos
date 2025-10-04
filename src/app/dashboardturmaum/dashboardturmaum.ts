@@ -30,24 +30,24 @@ export class DashboardturmaUmComponent {
   modules: Module[] = [
     {
       id: 'module1',
-      title: 'MÓDULO 1 - CONHECENDO AS NOTAS',
+      title: 'MÓDULO 1 - PLACEHOLDER',
       progress: '0%',
       backgroundColor: 'bg-rosa',
       lessons: [
-        { id: 'lesson1', title: 'AULA 01 - DÓ', backgroundColor: 'bg-rosa-claro', iconBackgroundColor: 'bg-rosa', iconFillColor: '#FFD9E9' },
-        { id: 'lesson2', title: 'AULA 02 - RÉ', backgroundColor: 'bg-rosa-claro', iconBackgroundColor: 'bg-rosa', iconFillColor: '#FFD9E9' },
-        { id: 'lesson3', title: 'AULA 03 - MI', backgroundColor: 'bg-rosa-claro', iconBackgroundColor: 'bg-rosa', iconFillColor: '#FFD9E9' }
+        { id: 'lesson1', title: 'AULA 01', backgroundColor: 'bg-rosa-claro', iconBackgroundColor: 'bg-rosa', iconFillColor: '#FFD9E9' },
+        { id: 'lesson2', title: 'AULA 02', backgroundColor: 'bg-rosa-claro', iconBackgroundColor: 'bg-rosa', iconFillColor: '#FFD9E9' },
+        { id: 'lesson3', title: 'AULA 03', backgroundColor: 'bg-rosa-claro', iconBackgroundColor: 'bg-rosa', iconFillColor: '#FFD9E9' }
       ]
     },
     {
       id: 'module2',
-      title: 'MÓDULO 2 - PAUTAS E NOTAS',
+      title: 'MÓDULO 2 - PLACEHOLDER',
       progress: '0%',
       backgroundColor: 'bg-amarelo',
       lessons: [
-        { id: 'lesson1', title: 'AULA 01 - DÓ', backgroundColor: 'bg-amarelo-claro', iconBackgroundColor: 'bg-amarelo', iconFillColor: '#FFEBB3' },
-        { id: 'lesson2', title: 'AULA 02 - RÉ', backgroundColor: 'bg-amarelo-claro', iconBackgroundColor: 'bg-amarelo', iconFillColor: '#FFEBB3' },
-        { id: 'lesson3', title: 'AULA 03 - MI', backgroundColor: 'bg-amarelo-claro', iconBackgroundColor: 'bg-amarelo', iconFillColor: '#FFEBB3' }
+        { id: 'lesson1', title: 'AULA 01', backgroundColor: 'bg-amarelo-claro', iconBackgroundColor: 'bg-amarelo', iconFillColor: '#FFEBB3' },
+        { id: 'lesson2', title: 'AULA 02', backgroundColor: 'bg-amarelo-claro', iconBackgroundColor: 'bg-amarelo', iconFillColor: '#FFEBB3' },
+        { id: 'lesson3', title: 'AULA 03', backgroundColor: 'bg-amarelo-claro', iconBackgroundColor: 'bg-amarelo', iconFillColor: '#FFEBB3' }
       ]
     },
     {
@@ -56,9 +56,9 @@ export class DashboardturmaUmComponent {
       progress: '0%',
       backgroundColor: 'bg-verde',
       lessons: [
-        { id: 'lesson1', title: 'AULA 01 - DÓ', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
-        { id: 'lesson2', title: 'AULA 02 - RÉ', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
-        { id: 'lesson3', title: 'AULA 03 - MI', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' }
+        { id: 'lesson1', title: 'AULA 01', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
+        { id: 'lesson2', title: 'AULA 02', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
+        { id: 'lesson3', title: 'AULA 03', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' }
       ]
     }
   ];

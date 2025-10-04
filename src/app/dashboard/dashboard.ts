@@ -52,13 +52,13 @@ export class DashboardComponent {
     },
     {
       id: 'module3',
-      title: 'MÓDULO 3 - ANDAMENTOS',
+      title: 'MÓDULO 3 - PLACEHOLDER',
       progress: '0%',
       backgroundColor: 'bg-verde',
       lessons: [
-        { id: 'lesson1', title: 'AULA 01 - DÓ', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
-        { id: 'lesson2', title: 'AULA 02 - RÉ', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
-        { id: 'lesson3', title: 'AULA 03 - MI', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' }
+        { id: 'lesson1', title: 'AULA 01', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
+        { id: 'lesson2', title: 'AULA 02', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' },
+        { id: 'lesson3', title: 'AULA 03', backgroundColor: 'bg-verde-claro', iconBackgroundColor: 'bg-verde', iconFillColor: '#99DBC5' }
       ]
     }
   ];

@@ -7,7 +7,7 @@
   align-items: center;
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 1) 50%, #ffdb77 100%);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 1) 30%, #FFBC00 100%);
 }
 
 .inner-container {
@@ -42,7 +42,7 @@
   width: 100%;
   border-radius: 14px;
   padding: 14px;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +74,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: linear-gradient(180deg, #fff8e3 0%, #ffd666 100%);
+  background: linear-gradient(180deg, #009be8 0%, #0c4a69 100%);
 }
 
 .profile-avatar {
@@ -117,11 +117,11 @@
 .placeholder-bars .bar {
   width: 92%;
   height: 44px;
-  background: #FFBC00;
+  background: #B3E1F9;
   border-radius: 15px;
   margin: 0px 0 22px 0;
-  box-shadow: 0px 4px 9px #997104;
-  color: #5e4500;
+  box-shadow: 0px 4px 9px #0c4a69;
+  color: #0D4B69;
   text-align: center;
   align-items: center;
   align-content: center;
@@ -161,7 +161,7 @@
   border-radius: 14px;
   padding: 10px;
   width: 98%;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
 }
 
 .tab {
@@ -170,26 +170,26 @@
   font-size: 20px;
   padding: 8px 34px;
   border-radius: 14px;
-  background-color: #FFBC00;
-  color: #5e4500;
+  background-color: #009be8;
+  color: #0d4b69;
   font-weight: 600;
   cursor: pointer;
 }
 
 .tab.active {
-  background-color: #af8000;
+  background-color: #155e82;
   color: #fff;
 }
 
 span{
-    color: #FFBC00;
+    color: #2D89B7;
     font-size: 30px;
     font-weight: 600;
 }
 
 .aulastitle{
     align-self: start;
-    color: #aa7d02;
+    color: #2D89B7;
     font-size: 30px;
     font-weight: 600;
     margin-top: 20px;
@@ -220,7 +220,7 @@ span{
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
   padding: 0px 16px;
 }
 
@@ -234,7 +234,7 @@ span{
 
 .calendar-header p {
   font-weight: bold;
-  color: #FFBC00;
+  color: #004a75;
   text-align: center;
   margin-top: 32px;
   font-size: 20px;
@@ -243,7 +243,7 @@ span{
 .add-btn {
   width: 38px;
   height: 38px;
-  background-color: #FFBC00;
+  background-color: #0D4B69;
   
   border-radius: 50%;
   display: flex;
@@ -302,7 +302,7 @@ span{
   background: #1590CD;
   color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
 }
 
 /* Slots */
@@ -311,7 +311,7 @@ span{
   background: #ffffff;
   padding: 8px 14px;
   border-radius: 10px;
-  color: #FFBC00;
+  color: #004a75;
   font-weight: 500;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
   font-weight: 600;
@@ -333,7 +333,7 @@ span{
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
   background-color: white;
 }
 
@@ -369,7 +369,7 @@ span{
 .lessons-title {
   font-size: 30px;
   font-weight: 600;
-  color: #FFBC00;
+  color: #2D89B7;
   margin: 0;
   text-transform: uppercase;
 }
@@ -379,7 +379,7 @@ span{
   background-color: #fff;
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0c4a69;
 }
 
 /* Linha com as 3 aulas */
@@ -488,7 +488,7 @@ span{
 }
 
 .nav-btn {
-  background: #FFBC00;
+  background: #0d4b69;
   border: none;
   color: white;
   width: 36px;
@@ -500,7 +500,7 @@ span{
 
 .month-title {
   font-weight: 700;
-  color: #FFBC00;
+  color: #004a75;
   padding: 4px 10px;
 }
 
@@ -567,7 +567,7 @@ span{
   padding: 6px 8px;
   background: #e7f7ff;
   border-radius: 8px;
-  border-left: 5px solid #FFBC00;
+  border-left: 5px solid #0077ff;
   font-size: 12px;
   font-weight: 600;
   color: #004a75;
@@ -597,14 +597,14 @@ span{
   flex-direction: column;
   gap: 10px;
 
-  h3 { margin: 0; color: #FFBC00; }
+  h3 { margin: 0; color: #0d4b69; }
 
   label {
     display: flex;
     flex-direction: column;
     font-weight: 600;
     font-size: 14px;
-    color: #FFBC00;
+    color: #004a75;
 
     input, select {
       margin-top: 4px;
@@ -646,7 +646,7 @@ span{
 .module {
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0px 4px 9px #FFBC00;
+  box-shadow: 0px 4px 9px #0d4b69;
 }
 .module-header {
   padding: 20px;
@@ -657,7 +657,7 @@ span{
 }
 
 .module-header h2, .module-header span {
-  color: #5e4500 !important;
+  color: #0D4B69 !important;
   font-size: 28px !important;
   font-weight: 800;
   text-transform: uppercase;
@@ -666,7 +666,7 @@ span{
 .title-lesson{
     font-size: 22px !important;
     font-weight: 800;
-    color: #5e4500;
+    color: #0D4B69;
 }
 
 .bg-verde {
@@ -730,17 +730,17 @@ background: #FFD9E9;
 }
 
 .modules::-webkit-scrollbar-thumb {
-  background: #FFBC00; /* cor do thumb */
+  background: #2D89B7; /* cor do thumb */
   border-radius: 4px;   /* arredondado */
 }
 
 .modules::-webkit-scrollbar-thumb:hover {
-  background: darken(#FFBC00, 10%); /* tom mais escuro ao passar o mouse */
+  background: darken(#2D89B7, 10%); /* tom mais escuro ao passar o mouse */
 }
 
 /* Para Firefox */
 .modules {
   scrollbar-width: thin;
-  scrollbar-color: #FFBC00 transparent;
+  scrollbar-color: #2D89B7 transparent;
   padding: 12px; /* espaço extra pra sombra aparecer */
 }
